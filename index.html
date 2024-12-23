@@ -39,6 +39,7 @@
       height: 100%;
       background-color: rgba(255, 255, 255, 0.9);
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
@@ -62,10 +63,17 @@
       color: #555;
       display: none;
     }
+    #header-img {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
   <div id="password-prompt">
+    <!-- Added image -->
+    <img id="header-img" src="ellaball.png" alt="Ella Ball Logo">
     <div id="password-box">
       <h5>Enter the password for a Christmas treat...</h5>
       <input type="password" id="password-input" placeholder="Your favourite thing">
@@ -76,7 +84,7 @@
         A friend to all, whether sweet or not.<br>
         I vanish on heat, yet I’m still a treat.<br>
         What am I?</i>
-    </p>
+      </p>
     </div>
   </div>
   <div id="content" style="display: none;">
