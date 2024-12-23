@@ -31,7 +31,6 @@
       height: auto;
       margin-top: 20px;
     }
-
     #password-prompt {
       position: fixed;
       top: 0;
@@ -51,22 +50,33 @@
       font-size: 16px;
       margin-top: 10px;
     }
-    #submit-button {
+    #submit-button, #hint-button {
       padding: 10px 20px;
       font-size: 16px;
       margin-top: 10px;
       cursor: pointer;
+    }
+    #hint {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+      display: none;
     }
   </style>
 </head>
 <body>
   <div id="password-prompt">
     <div id="password-box">
-      <h5>Enter your password for a Chrsitmas treat...</h5>
+      <h5>Enter the password for a Christmas treat...</h5>
       <input type="password" id="password-input" placeholder="Your favourite thing">
-      <br>
-      <br>
+      <br><br>
       <button id="submit-button">Submit</button>
+      <button id="hint-button"></button>
+      <p id="hint">I turn from liquid to a solid block,
+        A friend to all, whether sweet or not.
+        I vanish on heat, yet I’m still a treat.
+        What am I?
+    </p>
     </div>
   </div>
   <div id="content" style="display: none;">
@@ -83,6 +93,11 @@
       } else {
         alert('Incorrect password!');
       }
+    });
+
+    document.getElementById('hint-button').addEventListener('click', function() {
+      const hint = document.getElementById('hint');
+      hint.style.display = 'block';
     });
   </script>
 </body>
