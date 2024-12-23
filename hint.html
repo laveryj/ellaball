@@ -57,8 +57,14 @@
       margin-top: 10px;
       cursor: pointer;
     }
+    #hint {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+      display: none;
+    }
     #header-img {
-      max-width: 30%;
+      max-width: 40%;
       height: auto;
       margin-bottom: 20px;
     }
@@ -66,14 +72,27 @@
 </head>
 <body>
   <div id="password-prompt">
-    <br><br>
-    <img id="header-img" src="ellaball.png" alt="header image">
+    <!-- Added image -->
+     <br>
+     <br>
+    <!-- <img id="header-img" src="ellaball.png" alt="header image"> -->
+    <!-- Added hint button -->
     <div id="password-box">
       <h5>Enter the password for a Christmas treat...</h5>
       <input type="password" id="password-input" placeholder="Your favourite thing">
       <br><br>
       <button id="submit-button">Submit</button><br><br>
-      <button id="hint-button"><i>Need a hint?</i></button>
+      
+      <!-- Added hint -->
+      <p><i>I’m yellow and smooth,<br>
+        I melt in the heat,<br>
+        Spread me on toast,<br>
+        I’m a savoury treat.<br>
+        <br>
+        What am I?</i>
+      </p>
+      <!-- Added hint -->
+
     </div>
   </div>
   <div id="content" style="display: none;">
@@ -93,7 +112,8 @@
     });
 
     document.getElementById('hint-button').addEventListener('click', function() {
-      window.location.href = 'hint.html';
+      const hint = document.getElementById('hint');
+      hint.style.display = 'block';
     });
   </script>
 </body>
